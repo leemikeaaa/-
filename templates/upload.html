@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实时视频处理</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>上传视频进行实时处理</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="video/*" required>
+        <input type="submit" value="上传视频">
+    </form>
+    <div>
+        <h2>实时处理视频</h2>
+        <img id="video_frame" src="" alt="Video Frame">
+    </div>
+    <script>
+        var socket = io();
+
+        socket.on('frame', function(data) {
+            var img = document.getElementById('video_frame');
+            img.src = 'data:image/jpeg;base64,' + btoa(String.fromCharCode.apply(null, new Uint8Array(data.image)));
+        });
+    </script>
+</body>
+</html>
