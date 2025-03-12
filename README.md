@@ -7,3 +7,4 @@
  5. test2.py在3基础上加入了情绪识别模型分为四类,但是在测试集上表现一般准确度有50%左右而且在无独显的笔记本上运行效果较为卡顿
  6. test3.py进行测试yolo模型
 
+#### 数据集链接链接: https://pan.baidu.com/s/1bCOj0xwLNA6hsJrSVJg16g?pwd=es2v 提取码: es2v 
